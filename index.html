@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram Text Editor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app-container">
+    <!-- Sidebar with chat folders -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Chats</h2>
+      </div>
+      <div class="folders-container">
+        <div class="folder-item active" data-folder="all">
+          <span class="folder-icon">📱</span>
+          <span class="folder-label">All Chats</span>
+        </div>
+        <div class="folder-item" data-folder="favorites">
+          <span class="folder-icon">⭐</span>
+          <span class="folder-label">Favorites</span>
+        </div>
+        <div class="folder-item" data-folder="groups">
+          <span class="folder-icon">👥</span>
+          <span class="folder-label">Groups</span>
+        </div>
+        <div class="folder-item" data-folder="channels">
+          <span class="folder-icon">📢</span>
+          <span class="folder-label">Channels</span>
+        </div>
+      </div>
+      <div class="settings-btn">
+        <button id="settings-toggle">⚙️ Settings</button>
+      </div>
+    </aside>
+
+    <!-- Main editor area -->
+    <main class="editor-container">
+      <div class="editor-header">
+        <h1>Text Editor</h1>
+        <div class="editor-controls">
+          <button class="btn" id="bg-toggle">🎨 Background</button>
+          <button class="btn" id="theme-toggle">🌙 Theme</button>
+        </div>
+      </div>
+
+      <!-- Toolbar with markdown formatting -->
+      <div class="toolbar">
+        <div class="toolbar-group">
+          <button class="toolbar-btn" data-format="bold" title="Bold (Ctrl+B)">B</button>
+          <button class="toolbar-btn" data-format="italic" title="Italic (Ctrl+I)">I</button>
+          <button class="toolbar-btn" data-format="strike" title="Strike (Ctrl+S)">S</button>
+          <button class="toolbar-btn" data-format="code" title="Code">{'<>'}</button>
+        </div>
+        <div class="toolbar-group">
+          <button class="toolbar-btn" data-format="h1" title="Heading 1">#</button>
+          <button class="toolbar-btn" data-format="h2" title="Heading 2">##</button>
+          <button class="toolbar-btn" data-format="quote" title="Quote">"</button>
+          <button class="toolbar-btn" data-format="list" title="List">⋮</button>
+        </div>
+        <div class="toolbar-group">
+          <button class="toolbar-btn" id="undo-btn" title="Undo">↶</button>
+          <button class="toolbar-btn" id="redo-btn" title="Redo">↷</button>
+        </div>
+      </div>
+
+      <!-- Editor content area -->
+      <div class="editor-content">
+        <textarea id="editor" class="editor-textarea" placeholder="Start typing..."></textarea>
+        <div id="preview" class="editor-preview"></div>
+      </div>
+
+      <!-- Character count -->
+      <div class="editor-footer">
+        <span class="char-count">0 characters</span>
+      </div>
+    </main>
+
+    <!-- Animated background overlay -->
+    <div id="bg-overlay" class="bg-overlay"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
